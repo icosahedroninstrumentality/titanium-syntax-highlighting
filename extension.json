@@ -1,0 +1,8 @@
+{
+  "name": "Titanium Extension",
+  "main": "./extension.js",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  }
+}

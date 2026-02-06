@@ -1,0 +1,48 @@
+{
+  "name": "titanium-syntax",
+  "displayName": "Titanium Language Support",
+  "description": "Syntax highlighting for the Titanium programming language",
+  "version": "0.1.0",
+  "publisher": "icosahedroninstrumentality",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/icosahedroninstrumentality/titanium-syntax-highlighting"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "titanium",
+        "aliases": [
+          "Titanium",
+          "titanium"
+        ],
+        "extensions": [
+          ".ti",
+          ".titan",
+          ".titanium"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "titanium",
+        "scopeName": "source.titanium",
+        "path": "./syntaxes/titanium.tmLanguage.json"
+      }
+    ]
+  },
+  "keywords": [
+    "titanium",
+    "syntax",
+    "highlighting"
+  ],
+  "author": "Icosahedron Instrumentality",
+  "license": "ISC"
+}

@@ -1,0 +1,244 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Titanium",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#function-declaration"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#capitalized-names"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.documentation.titanium",
+					"begin": "/\\*\\*",
+					"end": "\\*/",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.titanium"
+						}
+					},
+					"patterns": [
+						{
+							"name": "comment.block.documentation.titanium",
+							"match": "."
+						}
+					]
+				},
+				{
+					"name": "comment.block.titanium",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.titanium"
+						}
+					}
+				},
+				{
+					"name": "comment.line.documentation.titanium",
+					"begin": "///",
+					"end": "$",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.titanium"
+						}
+					}
+				},
+				{
+					"name": "comment.line.titanium",
+					"begin": "//",
+					"end": "$",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.titanium"
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.titanium",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.titanium",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.titanium",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.titanium",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.float.titanium",
+					"match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?\\b"
+				},
+				{
+					"name": "constant.numeric.hex.titanium",
+					"match": "\\b0[xXbB][0-9a-fA-F]+\\b"
+				},
+				{
+					"name": "constant.numeric.binary.titanium",
+					"match": "\\b0[bB][01]+\\b"
+				},
+				{
+					"name": "constant.numeric.integer.titanium",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.titanium",
+					"match": "\\b(if|else|for|while|return|break|continue|switch|case|default|async|discard)\\b"
+				},
+				{
+					"name": "keyword.declaration.titanium",
+					"match": "\\b(var|const|function|object|alias|import|module)\\b"
+				},
+				{
+					"name": "keyword.modifier.access.titanium",
+					"match": "\\b(public|private|static)\\b"
+				},
+				{
+					"name": "keyword.operator.logical.titanium",
+					"match": "\\b(is|as|extends|to|in)\\b"
+				},
+				{
+					"name": "constant.language.titanium",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.titanium",
+					"match": "\\b(Int|UInt|Float|Bool|Int8|Int16|Int32|Int64|UInt8|UInt16|UInt32|UInt64|Float8|Float16|Float32|Float64|String|Map|Array|Void)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.assignment.titanium",
+					"match": "=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^="
+				},
+				{
+					"name": "keyword.operator.arithmetic.titanium",
+					"match": "\\+|-|\\*|/|%"
+				},
+				{
+					"name": "keyword.operator.comparison.titanium",
+					"match": "==|!=|<|>|<=|>="
+				},
+				{
+					"name": "keyword.operator.logical.titanium",
+					"match": "&&|\\|\\||!"
+				},
+				{
+					"name": "keyword.operator.bitwise.titanium",
+					"match": "&|\\||\\^|~|<<|>>"
+				},
+				{
+					"name": "keyword.operator.ternary.titanium",
+					"match": "\\?|:"
+				},
+				{
+					"name": "punctuation.operator.titanium",
+					"match": "->|::|\\.|,|~|~="
+				}
+			]
+		},
+		"function-declaration": {
+			"patterns": [
+				{
+					"name": "meta.function.titanium",
+					"match": "\\b(function)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.titanium"
+						},
+						"2": {
+							"name": "entity.name.function.titanium"
+						}
+					}
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "meta.function.titanium",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.titanium"
+						}
+					}
+				}
+			]
+		},
+		"capitalized-names": {
+			"patterns": [
+				{
+					"name": "support.class.titanium",
+					"match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other.titanium",
+					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.titanium"
+}

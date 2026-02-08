@@ -146,7 +146,7 @@
 				},
 				{
 					"name": "keyword.operator.logical.titanium",
-					"match": "\\b(is|as|extends|to|in)\\b"
+					"match": "\\b(is|as|extends|to|in|self)\\b"
 				},
 				{
 					"name": "constant.language.titanium",

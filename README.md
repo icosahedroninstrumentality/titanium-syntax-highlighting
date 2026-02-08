@@ -30,7 +30,7 @@ A VS Code extension providing syntax highlighting for the Titanium programming l
 - **Declaration**: `var`, `const`, `function`, `object`, `alias`, `import`, `module`
 - **Access Modifiers**: `public`, `private`, `static`
 - **Control Flow**: `if`, `else`, `for`, `while`, `return`, `break`, `continue`, `switch`, `case`, `default`
-- **Type Keywords**: `is`, `as`, `extends`, `to`
+- **Type Keywords**: `is`, `as`, `extends`, `to`, `self`
 - **Logical**: `and`, `or`, `not`
 - **Constants**: `true`, `false`, `null`
 
@@ -60,17 +60,6 @@ Primitive types:
 ## Installation
 
 Install from the VS Code Extension Marketplace by searching for "Titanium Language Support"
-
-## Project Structure
-
-```txt
-titanium-extension/
-├── package.json                          # Extension manifest
-├── language-configuration.json           # Language configuration
-├── syntaxes/
-│   └── titanium.tmLanguage.json         # TextMate grammar for syntax highlighting
-└── README.md                             # This file
-```
 
 ## License
 

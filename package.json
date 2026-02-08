@@ -2,7 +2,7 @@
   "name": "titanium-syntax",
   "displayName": "Titanium Language Support",
   "description": "Syntax highlighting for the Titanium programming language",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "icosahedroninstrumentality",
   "repository": {
     "type": "git",

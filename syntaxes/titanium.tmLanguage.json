@@ -134,7 +134,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.titanium",
-					"match": "\\b(if|else|for|while|return|break|continue|switch|case|default|async|discard)\\b"
+					"match": "\\b(if|else|for|while|return|break|continue|switch|case|default|async|discard|preserve)\\b"
 				},
 				{
 					"name": "keyword.declaration.titanium",
@@ -214,12 +214,42 @@
 			"patterns": [
 				{
 					"name": "meta.function.titanium",
-					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?:<[^>]*>)?\\s*(?=\\()",
-					"captures": {
+					"begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=<|\\()",
+					"end": "(?=\\()",
+					"beginCaptures": {
 						"1": {
 							"name": "entity.name.function.titanium"
 						}
-					}
+					},
+					"patterns": [
+						{
+							"begin": "<",
+							"end": ">",
+							"patterns": [
+								{
+									"include": "#comments"
+								},
+								{
+									"include": "#strings"
+								},
+								{
+									"include": "#numbers"
+								},
+								{
+									"include": "#keywords"
+								},
+								{
+									"include": "#types"
+								},
+								{
+									"include": "#operators"
+								},
+								{
+									"include": "#variables"
+								}
+							]
+						}
+					]
 				}
 			]
 		},

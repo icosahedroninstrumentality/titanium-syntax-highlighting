@@ -12,6 +12,9 @@
 			"include": "#numbers"
 		},
 		{
+			"include": "#attributes"
+		},
+		{
 			"include": "#function-declaration"
 		},
 		{
@@ -130,6 +133,66 @@
 				}
 			]
 		},
+		"attributes": {
+			"patterns": [
+				{
+					"name": "meta.attribute.titanium",
+					"begin": "(@)([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+					"end": "(\\))",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.annotation.titanium"
+						},
+						"2": {
+							"name": "entity.name.tag.annotation.titanium"
+						},
+						"3": {
+							"name": "punctuation.section.group.begin.titanium"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.section.group.end.titanium"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#types"
+						},
+						{
+							"include": "#operators"
+						},
+						{
+							"include": "#variables"
+						}
+					]
+				},
+				{
+					"name": "meta.attribute.titanium",
+					"match": "(@)([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.annotation.titanium"
+						},
+						"2": {
+							"name": "entity.name.tag.annotation.titanium"
+						}
+					}
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
@@ -158,7 +221,7 @@
 			"patterns": [
 				{
 					"name": "storage.type.titanium",
-					"match": "\\b(Int|UInt|Float|Bool|Int8|Int16|Int32|Int64|UInt8|UInt16|UInt32|UInt64|Float8|Float16|Float32|Float64|String|Map|Array|Void)\\b"
+					"match": "\\b(Int|UInt|Float|Bool|Int8|Int16|Int32|Int64|UInt8|UInt16|UInt32|UInt64|Float8|Float16|Float32|Float64|String|Map|Array|Void|Reference)\\b"
 				}
 			]
 		},

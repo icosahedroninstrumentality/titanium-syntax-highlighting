@@ -197,11 +197,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.titanium",
-					"match": "\\b(if|else|for|while|return|break|continue|switch|case|default|async|discard|preserve)\\b"
+					"match": "\\b(if|else|for|while|return|input|break|continue|switch|case|default|async|discard|preserve)\\b"
 				},
 				{
 					"name": "keyword.declaration.titanium",
-					"match": "\\b(var|const|function|object|alias|import|module)\\b"
+					"match": "\\b(var|const|function|object|prototype|enum|alias|import|module)\\b"
 				},
 				{
 					"name": "keyword.modifier.access.titanium",
@@ -229,7 +229,7 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.assignment.titanium",
-					"match": "=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^="
+					"match": "=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^=|<-|~|~="
 				},
 				{
 					"name": "keyword.operator.arithmetic.titanium",
@@ -253,7 +253,7 @@
 				},
 				{
 					"name": "punctuation.operator.titanium",
-					"match": "->|::|\\.|,|~|~="
+					"match": "\\.|,|;"
 				}
 			]
 		},
